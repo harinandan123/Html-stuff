@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <title>Calcultor:)</title>
+    </head>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900,");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #dd9308;
+      }
+      .calculator {
+        position: fixed;
+        top: 187px;
+        display: grid;
+      }
+      .calculator .value {
+        grid-column: span 4;
+        height: 100px;
+        width: 300px;
+        text-align: right;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 1.5em;
+      }
+      .calculator span {
+        display: grid;
+        width: 75px;
+        height: 75px;
+        color: #fff;
+        background: #0c2835;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .calculator span:hover {
+        background: #07e9cb;
+        color: #fff;
+      }
+      .calculator span:hover {
+        background: #07e9cb;
+        color: #fff;
+      }
+      .calculator span.clear {
+        grid-column: span 2;
+        width: 150px;
+        background: #ff3077;
+      }
+      .calculator span.clear:hover {
+        background: #07e9cb;
+        color: #fff;
+      }
+      .calculator span.plus {
+        grid-row: span 2;
+        height: 150px;
+      }
+      .calculator span.equal {
+        background: #ff3077;
+      }
+      .calculator span.equal:hover {
+        background: #07e9cb;
+        color: #fff;
+      }
+      .box1 {
+        position: fixed;
+        top: 180px;
+        width: 314px;
+        height: 489px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        /*border-radius: 20px;*/
+      }
+      .box1::before {
+        content: "";
+        position: absolute;
+        width: 1000px;
+        height: 150px;
+        background: linear-gradient(#00ccff, #d400d4);
+        animation: animate1 6s linear infinite;
+      }
+      .box1::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        background: #091921;
+        /*border-radius: 16px;*/
+      }
+      @keyframes animate1 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .box2 {
+        position: absolute;
+        top: 15px;
+        width: 600px;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        /*border-radius: 20px;*/
+      }
+      .box2::before {
+        content: "";
+        position: absolute;
+        width: 10em;
+        height: 150px;
+        background: linear-gradient(#00ccff, #d400d4);
+        animation: animate2 6s linear infinite;
+      }
+      .box2::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        background: #091921;
+        /*border-radius: 16px;*/
+      }
+      @keyframes animate2 {
+        0% {
+          transform: translateX(-200px);
+        }
+
+        50% {
+          transform: translateX(200px);
+        }
+        100% {
+          transform: translateX(-200px);
+        }
+      }
+      h1 {
+        position: absolute;
+        top: 15px;
+        color: #fff;
+        font-size: 5em;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+          0 0 80px #03bcf4;
+      }
+      h2 {
+        position: absolute;
+        top: 530px;
+        right: 100px;
+        color: #000;
+        font-size: 1em;
+      }
+      h2:hover {
+        position: absolute;
+        top: 530px;
+        right: 100px;
+        color: #fff;
+        font-size: 16px;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+        /*0 0 40px #03bcf4;
+		         0 0 80px #03bcf4;*/
+      }
+      h3 {
+        position: absolute;
+        top: 550px;
+        right: 150px;
+        color: #000;
+        font-size: 1.5em;
+      }
+      h3:hover {
+        position: absolute;
+        top: 550px;
+        right: 150px;
+        color: #fff;
+        font-size: 1.5em;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+        /*0 0 40px #03bcf4;
+		         0 0 80px #03bcf4;*/
+      }
+      #a a {
+        position: absolute;
+        top: 620px;
+        right: 147px;
+        font-weight: 1000;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #fff;
+        animation: f 5s linear infinite;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+      }
+      #b a {
+        position: absolute;
+        top: 590px;
+        right: 135px;
+        font-weight: 1000;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #fff;
+        animation: f 5s linear infinite;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+      }
+      #c a {
+        position: absolute;
+        top: 650px;
+        right: 145px;
+        font-weight: 1000;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #fff;
+        animation: f 5s linear infinite;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+      }
+      @keyframes f {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+    <body>
+      <div class="box3"></div>
+      <div class="box2"></div>
+      <h1>Calculator</h1>
+      <div class="box1"></div>
+      <form class="calculator" name="calc">
+        <input class="value" type="text" name="txt" />
+        <span class="num clear" onclick="document.calc.txt.value =''">c</span>
+        <span class="num" onclick="document.calc.txt.value +='/'">÷</span>
+        <span class="num" onclick="document.calc.txt.value +='*'">X</span>
+        <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+        <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+        <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+        <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+        <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+        <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+        <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+        <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+        <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+        <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+        <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+        <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+        <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+        <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+        <span
+          class="num equal"
+          onclick="document.calc.txt.value = eval(calc.txt.value)"
+          >=</span
+        >
+      </form>
+    </body>
+  </html>
+</html>
