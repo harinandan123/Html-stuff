@@ -1,3 +1,3 @@
 # Html-stuff
 
-The Github repo for all my important HTML projects!
+The Github repo for some of my important HTML projects!
